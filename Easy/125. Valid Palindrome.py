@@ -4,9 +4,7 @@ class Solution:
         for i in s.lower():
             if i.isalnum():
                 ans += i
-        if ans == ans[::-1]:
-            return 1
-        return 0
+        return ans == ans[::-1]
 
 
 a = Solution()
