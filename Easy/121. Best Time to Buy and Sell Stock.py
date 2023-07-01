@@ -4,11 +4,9 @@ class Solution:
         max_profit = 0
         for rp in range(rp,len(prices)):
             if prices[lp] < prices[rp]:
-                profit = prices[rp] - prices[lp]
-                max_profit = max(max_profit,profit)
+                max_profit = max(max_profit,prices[rp] - prices[lp])
             else:
                 lp = rp
-            print (lp,rp)
         return max_profit
 
 
