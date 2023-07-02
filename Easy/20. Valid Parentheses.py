@@ -1,28 +1,23 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
+        closeToOpen = {
+            ")": "(",
+            "}": "{",
+            "]": "["
+        }
         for i in s:
-            
-            if i == "(" or i == "{" or i == "[":
+            print(stack)
+            if i in closeToOpen:
+                if stack and stack[-1] == closeToOpen[i]:
+                    stack.pop()
+                else:
+                    return False
+            else:
                 stack.append(i)
-            elif (i == ")" and stack[0] == "("):
-                stack.pop(0)
-            elif (i == "}" and stack[0] == "{") :
-                stack.pop(0)
-            elif (i == "]" and stack[0] == "["):
-                stack.pop(0)
-            print(stack)  
-            # or i == "}" or i == "]":
-            #     stack.append(i)
-        
-        # while stack[0] == stack[-1]:
-        #     stack.pop(0)
-        #     stack.pop()
-        #     if stack:
-        #         return True
-        # return False
-        print(stack)
+        return True if not stack else False
+
 
 
 a = Solution()
-print(a.isValid("([])"))
+print(a.isValid("([{[()]}])"))
