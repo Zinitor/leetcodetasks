@@ -16,4 +16,4 @@ class Solution:
 
 
 a = Solution()
-print(a.searchInsert(nums=[1,3,5,6], target=2))
+print(a.searchInsert(nums=[0,1,3,5,6], target=2))
